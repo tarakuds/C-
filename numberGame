@@ -1,0 +1,110 @@
+using System.Linq;
+using System;
+
+namespace numberguessing_task3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //declaring variables
+            int guess_limitA = 6;
+            int guess_limitB = 4;
+            int guess_limitC = 3;
+            int guess_count = 0;
+            string play;
+            int numberA = 2;
+            int numberB = 20;
+            int numberC = 35;
+
+            int guess;
+            int a = 6;
+            int b = 4;
+            int c = 3;
+            //    int remain = 5;
+            //     int n = remain - 1;
+
+            Console.WriteLine("WELCOME TO THE NUMBER GUESSING GAME");
+            Console.WriteLine();
+
+            Console.WriteLine(" For EASY type > E \n For MEDIUM type > M \n For HARD type > H \n");
+
+
+            Console.WriteLine("What Level Would You Want To Play");
+            play = Console.ReadLine();
+
+            //stating conditions for each level Easy
+            if (play == "E")
+            {
+                while (guess_count < guess_limitA)
+                {
+                    guess_count += 1;
+                    Console.WriteLine("Guess a number within the range 1 to 10");
+                    guess = int.Parse(Console.ReadLine());
+                    a -= 1;
+
+                    if (guess == numberA)
+                    {
+                        Console.WriteLine("You are correct");
+                        break;
+                    }
+                    else
+                    { Console.WriteLine("Try Again! you have " + a + "trials left"); }
+
+
+                }
+                Console.WriteLine("GAME OVER");
+            }
+
+
+            //stating conditions for each level Medium
+            else if (play == "M")
+            {
+                while (guess_count < guess_limitB)
+                {
+                    guess_count += 1;
+                    Console.WriteLine("Guess a number within the range 1 to 20");
+                    guess = int.Parse(Console.ReadLine());
+                    b -= 1;
+
+                    if (guess == numberB)
+                    {
+                        Console.WriteLine("You are correct");
+                        break;
+                    }
+                    else
+                    { Console.WriteLine("Try Again! you have " + b + "trials left"); }
+
+
+                }
+                Console.WriteLine("GAME OVER");
+            }
+
+            //stating conditions for each level Hard
+            else if (play == "H")
+            {
+                while (guess_count < guess_limitC)
+                {
+                    guess_count += 1;
+                    Console.WriteLine("Guess a number within the range 1 to 50");
+                    guess = int.Parse(Console.ReadLine());
+                    c -= 1;
+
+                    if (guess == numberC)
+                    {
+                        Console.WriteLine("You are correct");
+                        break;
+                    }
+                    else
+                    { Console.WriteLine("Try Again! you have " + c + "trials left"); }
+
+
+                }
+                Console.WriteLine("GAME OVER");
+            }
+
+        }
+    }
+
+
+}
