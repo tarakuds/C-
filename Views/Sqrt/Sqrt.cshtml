@@ -1,0 +1,45 @@
+@{
+    ViewData["Title"] = "Calculator";
+}
+
+<div class="text-center">
+    <h1 class="display-4">This is a Square Root Calculator</h1>
+    
+    <div>
+        @{
+             if( ViewBag.Sqrt1 != null && ViewBag.Sqrt2 != null ){
+                 if(ViewBag.Sqrt1 > ViewBag.Sqrt2){
+                     <p> The Square root for the First Number: @ViewBag.FirstNumber is greater than that of the Second Number: @ViewBag.SecondNumber .</p>
+                 }else if(ViewBag.Sqrt1 == ViewBag.Sqrt2){
+                     <p>The square-roots are equal please try another number combination</p>
+                 }else{
+                     <p> The Square root for the First Number: @ViewBag.FirstNumber is less than that of the Second Number: @ViewBag.SecondNumber .</p>
+                 }
+                 
+             }else{
+                 <p>There is an error</p>
+             }
+            @* if( ViewBag.Sqrt1 = null || ViewBag.Sqrt2 = null ){
+                <p> @ViewBag.Error </p>
+            }else if(ViewBag.Sqrt1 < 1  || ViewBag.Sqrt2 < 1){
+                <p> @ViewBag.Errornegative </p>
+            } *@
+            
+        }
+
+            
+        <form asp-controller="Sqrt" asp-action="sqrt" method="post">
+            <p>
+               First Number: <input type="number" name="num1" id="" placeholder="Input a number">
+            </p>
+
+            <p>
+               Second Number: <input type="number" name="num2" id="" placeholder="Input another number">
+            </p>
+
+            <p>
+                <button type="submit">Compare</button>
+            </p>
+        </form>
+    </div>
+</div>
